@@ -11,10 +11,3 @@ body {
   text-align: center;
   margin: 10% auto;
 }
-
-/* antd overrides */
-.ant-btn:empty {
-  width: 150px !important;
-  visibility: visible !important;
-  content: normal !important;
-}
