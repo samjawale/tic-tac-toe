@@ -27,8 +27,13 @@ export const mainSlice = createSlice({
     newGame() {
       return initialState;
     },
-    undo() {
-      return initialState;
+    undo(s, _: PayloadAction) {
+      const lastMove = s.moves.pop();
+      if (!lastMove) return;
+
+      const { player, location } = lastMove;
+      s.currentPlayer = player;
+      s.board[location[0]][location[1]] = "";
     },
     setMove(s, a: PayloadAction<Move>) {
       const { player, location } = a.payload;
