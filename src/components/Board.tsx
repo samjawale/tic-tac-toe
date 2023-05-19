@@ -18,8 +18,8 @@ const StyledCell = styled(CustomButton)`
   width: 150px;
   font-size: 50px;
   border-radius: 10px;
-  border-color: ${(props) =>
-    props.highlighted ? "#52c41a" : "#d9d9d9"} !important;
+  border: ${(props) =>
+    props.highlighted ? "5px solid #52c41a" : "2px solid #d9d9d9"} !important;
 `;
 
 const Board = () => {

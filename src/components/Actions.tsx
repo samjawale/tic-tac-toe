@@ -1,5 +1,10 @@
 import { styled } from "styled-components";
 import { Button, Space } from "antd";
+import {
+  AppstoreOutlined,
+  RollbackOutlined,
+  UndoOutlined
+} from "@ant-design/icons";
 import useActions from "../hooks/useActions";
 
 const StyledBtn = styled(Button).attrs(() => {
@@ -10,13 +15,23 @@ const StyledBtn = styled(Button).attrs(() => {
 `;
 
 const Actions = () => {
-  const { onReset } = useActions();
+  const { onUndo, onReset, onNewGame } = useActions();
 
   return (
     <Space>
-      <StyledBtn>Undo</StyledBtn>
-      <StyledBtn onClick={onReset}>Reset</StyledBtn>
-      <StyledBtn>Play Again</StyledBtn>
+      <StyledBtn onClick={onUndo}>
+        <RollbackOutlined />
+        Undo
+      </StyledBtn>
+
+      <StyledBtn onClick={onReset}>
+        <UndoOutlined /> Reset
+      </StyledBtn>
+
+      <StyledBtn onClick={onNewGame}>
+        <AppstoreOutlined />
+        New Game
+      </StyledBtn>
     </Space>
   );
 };

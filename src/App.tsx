@@ -6,6 +6,7 @@ import "./index.css";
 import Board from "./components/Board";
 import { store } from "./store/store";
 import Actions from "./components/Actions";
+import Stats from "./components/Stats";
 
 const { Title } = Typography;
 
@@ -20,6 +21,7 @@ const App = () => {
       <StyledContainer direction="vertical">
         <Title>Tic-Tac-Toe</Title>
         <Actions />
+        <Stats />
         <Board />
       </StyledContainer>
     </ReduxProvider>

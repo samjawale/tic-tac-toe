@@ -17,7 +17,17 @@ export const mainSlice = createSlice({
   name: "main",
   initialState,
   reducers: {
-    reset() {
+    reset(s) {
+      return {
+        ...initialState,
+        playerOWins: s.playerOWins,
+        playerXWins: s.playerXWins
+      };
+    },
+    newGame() {
+      return initialState;
+    },
+    undo() {
       return initialState;
     },
     setMove(s, a: PayloadAction<Move>) {
