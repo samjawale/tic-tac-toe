@@ -15,11 +15,11 @@ const StyledBtn = styled(Button).attrs(() => {
 `;
 
 const Actions = () => {
-  const { onUndo, onReset, onNewGame } = useActions();
+  const { pause, onUndo, onReset, onNewGame } = useActions();
 
   return (
     <Space>
-      <StyledBtn onClick={onUndo}>
+      <StyledBtn disabled={pause} onClick={onUndo}>
         <RollbackOutlined />
         Undo
       </StyledBtn>
