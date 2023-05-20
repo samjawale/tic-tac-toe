@@ -41,10 +41,7 @@ export const mainSlice = createSlice({
       s.currentPlayer = player === "X" ? "O" : "X";
       s.board[location[0]][location[1]] = player;
     },
-    setWinner(
-      s,
-      a: PayloadAction<{ player: Player; winningCells: Location[] }>
-    ) {
+    setWinner(s, a: PayloadAction<{ player: Player; winningCells: Location[] }>) {
       s.pause = true;
       const { player: winner, winningCells } = a.payload;
       notification.success({
@@ -61,21 +58,9 @@ export const mainSlice = createSlice({
 // selectors
 const mainSliceSelector = (s: Store) => s.main;
 
-export const pauseSelector = createSelector(mainSliceSelector, (s) => s.pause);
-export const currentPlayerSelector = createSelector(
-  mainSliceSelector,
-  (s) => s.currentPlayer
-);
-export const playerXWinsSelector = createSelector(
-  mainSliceSelector,
-  (s) => s.playerXWins
-);
-export const playerOWinsSelector = createSelector(
-  mainSliceSelector,
-  (s) => s.playerOWins
-);
-export const winningCellsSelector = createSelector(
-  mainSliceSelector,
-  (s) => s.winningCells
-);
-export const boardSelector = createSelector(mainSliceSelector, (s) => s.board);
+export const pauseSelector = createSelector(mainSliceSelector, s => s.pause);
+export const currentPlayerSelector = createSelector(mainSliceSelector, s => s.currentPlayer);
+export const playerXWinsSelector = createSelector(mainSliceSelector, s => s.playerXWins);
+export const playerOWinsSelector = createSelector(mainSliceSelector, s => s.playerOWins);
+export const winningCellsSelector = createSelector(mainSliceSelector, s => s.winningCells);
+export const boardSelector = createSelector(mainSliceSelector, s => s.board);

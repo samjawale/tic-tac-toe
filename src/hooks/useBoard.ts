@@ -71,8 +71,7 @@ const checkWinner = (board: Board, cells: Array<Location>): boolean => {
   const secondCell = board[cells[1][0]][cells[1][1]];
   const thirdCell = board[cells[2][0]][cells[2][1]];
 
-  if (firstCell && firstCell === secondCell && firstCell === thirdCell)
-    return true;
+  if (firstCell && firstCell === secondCell && firstCell === thirdCell) return true;
 
   return false;
 };
@@ -95,8 +94,7 @@ const useBoard = () => {
     }
   }, [board, dispatch]);
 
-  const onCellClick = (i: number) =>
-    dispatch(setMove({ player, location: LOCATIONS[i] }));
+  const onCellClick = (i: number) => dispatch(setMove({ player, location: LOCATIONS[i] }));
 
   return { pause, player, board, winningCells, onCellClick };
 };

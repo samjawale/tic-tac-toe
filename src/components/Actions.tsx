@@ -1,10 +1,6 @@
 import { styled } from "styled-components";
 import { Button, Space } from "antd";
-import {
-  AppstoreOutlined,
-  RollbackOutlined,
-  UndoOutlined
-} from "@ant-design/icons";
+import { AppstoreOutlined, RollbackOutlined, UndoOutlined } from "@ant-design/icons";
 import useActions from "../hooks/useActions";
 
 const StyledBtn = styled(Button).attrs(() => {

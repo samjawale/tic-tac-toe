@@ -1,7 +1,7 @@
+import { useMemo } from "react";
 import { styled } from "styled-components";
 import { Button, ButtonProps, Col, Row } from "antd";
 import useBoard from "../hooks/useBoard";
-import { useMemo } from "react";
 
 const StyledRow = styled(Row)`
   text-align: center;
@@ -10,16 +10,13 @@ const StyledRow = styled(Row)`
 type CustomButtonProps = {
   highlighted: boolean;
 } & ButtonProps;
-const CustomButton = ({ highlighted, ...rest }: CustomButtonProps) => (
-  <Button {...rest} />
-);
+const CustomButton = ({ highlighted, ...rest }: CustomButtonProps) => <Button {...rest} />;
 const StyledCell = styled(CustomButton)`
   height: 150px;
   width: 150px;
   font-size: 50px;
   border-radius: 10px;
-  border: ${(props) =>
-    props.highlighted ? "5px solid #52c41a" : "2px solid #d9d9d9"} !important;
+  border: ${props => (props.highlighted ? "5px solid #52c41a" : "2px solid #d9d9d9")} !important;
 `;
 
 const Board = () => {

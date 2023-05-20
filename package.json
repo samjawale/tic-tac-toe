@@ -2,6 +2,17 @@
   "name": "tic-tac-toe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://samjawale.github.io/tic-tac-toe",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write '+(src|public)/**/*.+(js|jsx|ts|tsx|json|css|md|html)'",
+    "prettier:check": "prettier --check '+(src|public)/**/*.+(js|jsx|ts|tsx|json|css|md|html)'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "antd": "^5.4.7",
@@ -14,6 +25,7 @@
     "web-vitals": "^3.3.1"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.21.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -22,14 +34,21 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "@types/react-redux": "^7.1.25",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "babel-preset-react-app": "^10.0.1",
+    "gh-pages": "^5.0.0",
+    "prettier": "^2.8.8"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "resolutions": {
+    "**/@babel/core": "^7.21.8",
+    "**/@babel/plugin-syntax-flow": "^7.21.4",
+    "**/@babel/plugin-transform-react-jsx": "^7.21.5",
+    "**/@babel/runtime": "^7.21.5",
+    "**/@testing-library/dom": "^9.3.0"
   },
+  "nohoist": [
+    "**/babel-preset-react-app/@babel/runtime"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",

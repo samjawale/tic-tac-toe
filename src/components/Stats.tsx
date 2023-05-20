@@ -1,20 +1,13 @@
 import { styled } from "styled-components";
 import { Card, Col, Row, Statistic } from "antd";
-import {
-  ArrowDownOutlined,
-  ArrowUpOutlined,
-  LineOutlined
-} from "@ant-design/icons";
+import { ArrowDownOutlined, ArrowUpOutlined, LineOutlined } from "@ant-design/icons";
 import useStats from "../hooks/useStats";
 
 const WIN_COLOR = "#3f8600";
 const LOOSE_COLOR = "#cf1322";
 const DRAW_COLOR = "#555555";
 
-const getColor = (
-  a: number,
-  b: number
-): typeof WIN_COLOR | typeof LOOSE_COLOR | typeof DRAW_COLOR => {
+const getColor = (a: number, b: number): typeof WIN_COLOR | typeof LOOSE_COLOR | typeof DRAW_COLOR => {
   if (a > b) return WIN_COLOR;
   if (a < b) return LOOSE_COLOR;
   return DRAW_COLOR;
