@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { styled } from "styled-components";
 import { Button, ButtonProps, Col, Row } from "antd";
 import useBoard from "../hooks/useBoard";
+import { device } from "../constants/style";
 
 const StyledRow = styled(Row)`
   text-align: center;
@@ -17,6 +18,12 @@ const StyledCell = styled(CustomButton)`
   font-size: 50px;
   border-radius: 10px;
   border: ${props => (props.highlighted ? "5px solid #52c41a" : "2px solid #d9d9d9")} !important;
+
+  @media ${device.mobileM} {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+  }
 `;
 
 const Board = () => {
