@@ -10,7 +10,7 @@ const StyledBtn = styled(Button).attrs(() => {
   width: 150px;
   border-radius: 10px;
 
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     width: 120px;
     border-radius: 10px;
   }

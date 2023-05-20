@@ -19,10 +19,9 @@ const StyledCell = styled(CustomButton)`
   border-radius: 10px;
   border: ${props => (props.highlighted ? "5px solid #52c41a" : "2px solid #d9d9d9")} !important;
 
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     height: 100px;
     width: 100px;
-    border-radius: 10px;
   }
 `;
 
